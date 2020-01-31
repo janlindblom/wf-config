@@ -4,7 +4,7 @@
 
 Name:           wf-config
 Version:        0.1
-Release:        4.%{date}git%{shortcommit}%{?dist}
+Release:        5.%{date}git%{shortcommit}%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
@@ -54,6 +54,9 @@ Development files for %{name}.
 
 
 %changelog
+* Fri Jan 31 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.1-5.20190904gite8d57d1
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Tue Oct 01 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 0.1-4.20190904gite8d57d1
 - Fix soname version
 
