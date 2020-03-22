@@ -1,22 +1,21 @@
-%global commit      e8d57d19183e0d358671e3aa7335cc2d3722321d
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global date        20190904
-
 Name:           wf-config
-Version:        0.1
-Release:        5.%{date}git%{shortcommit}%{?dist}
+Version:        0.4.0
+Release:        1%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
 URL:            https://github.com/WayfireWM/wf-config
-Source0:        %{url}/archive/%{commit}/%{name}-%{version}.%{date}git%{shortcommit}.tar.gz
-# https://github.com/WayfireWM/wf-config/issues/12
-Patch0:         %{url}/pull/13.diff#/%{name}-add-soname-version-to-library.diff
+Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+
+# Add include which requires new GCC 10
+Patch0:         https://github.com/WayfireWM/wf-config/pull/23.patch#/add-include-which-requires-new-gcc-10.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  meson
+BuildRequires:  pkgconfig(glm)
 BuildRequires:  pkgconfig(libevdev)
-BuildRequires:  pkgconfig(wlroots) >= 0.3
+BuildRequires:  pkgconfig(libxml-2.0)
+BuildRequires:  pkgconfig(wlroots) >= 0.9.0
 
 %description
 %{summary}.
@@ -31,7 +30,7 @@ Development files for %{name}.
 
 
 %prep
-%autosetup -p1 -n %{name}-%{commit}
+%autosetup -p1
 
 
 %build
@@ -54,6 +53,12 @@ Development files for %{name}.
 
 
 %changelog
+* Sat Mar 21 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.4-1
+- Update to 0.4
+
+* Thu Mar 12 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.3-1.20200313gitfdcc040
+- Update to latest git snapshot
+
 * Fri Jan 31 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.1-5.20190904gite8d57d1
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
