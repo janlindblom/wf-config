@@ -1,6 +1,10 @@
+# LTO
+%global optflags        %{optflags} -flto
+%global build_ldflags   %{build_ldflags} -flto
+
 Name:           wf-config
 Version:        0.4.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
@@ -53,8 +57,11 @@ Development files for %{name}.
 
 
 %changelog
-* Sat Mar 21 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.4-1
-- Update to 0.4
+* Sun Mar 22 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.4.0-2
+- Enable LTO
+
+* Sat Mar 21 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.4.0-1
+- Update to 0.4.0
 
 * Thu Mar 12 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.3-1.20200313gitfdcc040
 - Update to latest git snapshot
