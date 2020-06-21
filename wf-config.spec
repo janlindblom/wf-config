@@ -1,18 +1,11 @@
-# LTO
-%global optflags        %{optflags} -flto
-%global build_ldflags   %{build_ldflags} -flto
-
 Name:           wf-config
-Version:        0.4.0
-Release:        2%{?dist}
+Version:        0.4.1
+Release:        1%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
 URL:            https://github.com/WayfireWM/wf-config
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
-
-# Add include which requires new GCC 10
-Patch0:         https://github.com/WayfireWM/wf-config/pull/23.patch#/add-include-which-requires-new-gcc-10.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  meson
@@ -57,6 +50,11 @@ Development files for %{name}.
 
 
 %changelog
+* Sun Jun 21 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.4.1-1
+- Update to 0.4.1
+- Remove GCC 10 patch, upstreamed now | GH-23
+- Disable LTO
+
 * Sun Mar 22 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.4.0-2
 - Enable LTO
 
