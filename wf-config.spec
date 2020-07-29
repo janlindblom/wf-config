@@ -1,6 +1,6 @@
 Name:           wf-config
 Version:        0.4.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
@@ -50,6 +50,9 @@ Development files for %{name}.
 
 
 %changelog
+* Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.4.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Sun Jun 21 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.4.1-1
 - Update to 0.4.1
 - Remove GCC 10 patch, upstreamed now | GH-23
