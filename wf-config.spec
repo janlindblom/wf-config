@@ -1,5 +1,5 @@
 Name:           wf-config
-Version:        0.5.0
+Version:        0.6.0
 Release:        1%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
@@ -12,7 +12,7 @@ BuildRequires:  meson
 BuildRequires:  pkgconfig(glm)
 BuildRequires:  pkgconfig(libevdev)
 BuildRequires:  pkgconfig(libxml-2.0)
-BuildRequires:  pkgconfig(wlroots) >= 0.11.0
+BuildRequires:  pkgconfig(wlroots) >= 0.12.0
 
 %description
 %{summary}.
@@ -41,7 +41,6 @@ Development files for %{name}.
 
 %files
 %license LICENSE
-%dnl %{_libdir}/lib%{name}.so.0*
 %{_libdir}/lib%{name}.so.0*
 %{_libdir}/lib%{name}.so.1*
 
@@ -52,6 +51,9 @@ Development files for %{name}.
 
 
 %changelog
+* Wed Nov 18 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.6.0-1
+- build(update): 0.6.0
+
 * Tue Aug 04 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.5.0-1
 - Update to 0.5.0
 
