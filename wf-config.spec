@@ -1,11 +1,11 @@
 Name:           wf-config
-Version:        0.6.0
-Release:        2%{?dist}
+Version:        0.7.0
+Release:        1%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
 URL:            https://github.com/WayfireWM/wf-config
-Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc-c++
 BuildRequires:  meson
@@ -51,6 +51,9 @@ Development files for %{name}.
 
 
 %changelog
+* Fri Jan 29 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.7.0-1
+- build(update): 0.7.0
+
 * Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
