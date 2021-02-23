@@ -1,6 +1,6 @@
 Name:           wf-config
 Version:        0.7.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
@@ -8,8 +8,8 @@ URL:            https://github.com/WayfireWM/wf-config
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc-c++
+BuildRequires:  glm-devel
 BuildRequires:  meson
-BuildRequires:  pkgconfig(glm)
 BuildRequires:  pkgconfig(libevdev)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(wlroots) >= 0.12.0
@@ -51,6 +51,9 @@ Development files for %{name}.
 
 
 %changelog
+* Tue Feb 23 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.7.0-2
+- build: Switch to BR: glm-devel instead of pkgconfig
+
 * Fri Jan 29 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.7.0-1
 - build(update): 0.7.0
 
