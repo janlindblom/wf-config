@@ -8,8 +8,9 @@ URL:            https://github.com/WayfireWM/wf-config
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc-c++
-BuildRequires:  glm-devel
 BuildRequires:  meson
+BuildRequires:  cmake
+BuildRequires:  cmake(glm)
 BuildRequires:  pkgconfig(libevdev)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(wlroots) >= 0.12.0
