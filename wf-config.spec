@@ -1,16 +1,28 @@
+%bcond_without test
+
 Name:           wf-config
 Version:        0.7.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
 URL:            https://github.com/WayfireWM/wf-config
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
-BuildRequires:  gcc-c++
-BuildRequires:  meson
+# Fix build caused by glibc 2.34 SIGSTKSZ changes.
+# Fedora doctest package is already patched, but wf-config was using bundled
+# copy.
+Patch0:         %{url}/pull/43.patch#/wf-config-0.7.0-use-system-doctest.patch
+
 BuildRequires:  cmake
+BuildRequires:  gcc-c++
+BuildRequires:  meson >= 0.47
+
 BuildRequires:  cmake(glm)
+%if %{with test}
+BuildRequires:  cmake(doctest)
+%endif
+
 BuildRequires:  pkgconfig(libevdev)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(wlroots) >= 0.12.0
@@ -32,12 +44,25 @@ Development files for %{name}.
 
 
 %build
-%meson
+%if %{with test}
+%meson \
+    -Dtests=enabled
+%else
+%meson \
+    -Dtests=disabled
+%endif
+
 %meson_build
 
 
 %install
 %meson_install
+
+
+%if %{with test}
+%check
+%meson_test
+%endif
 
 
 %files
@@ -52,6 +77,9 @@ Development files for %{name}.
 
 
 %changelog
+* Mon Apr 12 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.7.0-3
+- fix: FTBFS f35 | RH#1926159
+
 * Tue Feb 23 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.7.0-2
 - build: Switch to BR: glm-devel instead of pkgconfig
 
