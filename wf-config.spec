@@ -1,8 +1,9 @@
-%bcond_without test
+# https://github.com/WayfireWM/wf-config/issues/45
+%bcond_with test
 
 Name:           wf-config
 Version:        0.7.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
@@ -77,6 +78,9 @@ Development files for %{name}.
 
 
 %changelog
+* Mon Apr 19 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.7.0-4
+- test: Disable temporary until GH#46 will be resolved
+
 * Mon Apr 12 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.7.0-3
 - fix: FTBFS f35 | RH#1926159
 
