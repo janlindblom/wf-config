@@ -1,19 +1,13 @@
-# https://github.com/WayfireWM/wf-config/issues/45
-%bcond_with test
+%bcond_without test
 
 Name:           wf-config
-Version:        0.7.0
-Release:        4%{?dist}
+Version:        0.7.1
+Release:        1%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
 URL:            https://github.com/WayfireWM/wf-config
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
-
-# Fix build caused by glibc 2.34 SIGSTKSZ changes.
-# Fedora doctest package is already patched, but wf-config was using bundled
-# copy.
-Patch0:         %{url}/pull/43.patch#/wf-config-0.7.0-use-system-doctest.patch
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
@@ -78,6 +72,9 @@ Development files for %{name}.
 
 
 %changelog
+* Wed Apr 21 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.7.1-1
+- build(update): 0.7.1
+
 * Mon Apr 19 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.7.0-4
 - test: Disable temporary until GH#46 will be resolved
 
