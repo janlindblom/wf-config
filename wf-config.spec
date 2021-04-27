@@ -20,7 +20,6 @@ BuildRequires:  cmake(doctest)
 
 BuildRequires:  pkgconfig(libevdev)
 BuildRequires:  pkgconfig(libxml-2.0)
-BuildRequires:  pkgconfig(wlroots) >= 0.12.0
 
 %description
 %{summary}.
