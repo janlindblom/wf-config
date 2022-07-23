@@ -2,7 +2,7 @@
 
 Name:           wf-config
 Version:        0.7.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
@@ -71,6 +71,9 @@ Development files for %{name}.
 
 
 %changelog
+* Sat Jul 23 2022 Fedora Release Engineering <releng@fedoraproject.org> - 0.7.1-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
+
 * Sat Jan 22 2022 Fedora Release Engineering <releng@fedoraproject.org> - 0.7.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
