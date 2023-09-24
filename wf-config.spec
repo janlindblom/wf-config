@@ -71,6 +71,9 @@ Development files for %{name}.
 
 
 %changelog
+* Sun Sep 24 2023 Jan Lindblom <janlindblom@fastmail.fm> 0.8.0-1
+- new package built with tito
+
 * Sat Jul 22 2023 Fedora Release Engineering <releng@fedoraproject.org> - 0.7.1-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
 
