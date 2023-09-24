@@ -6,8 +6,9 @@ Release:        1%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
-URL:            https://github.com/WayfireWM/wf-config
-Source0:        %{url}/archive/refs/heads/master.tar.gz
+URL:            https://github.com/janlindblom/wf-config-rpm
+Source0:        https://github.com/WayfireWM/wf-config/archive/refs/heads/master.tar.gz
+Repo:           
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
