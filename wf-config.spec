@@ -1,13 +1,13 @@
 %bcond_without test
 
 Name:           wf-config
-Version:        0.7.1
-Release:        6%{?dist}
+Version:        0.8.0
+Release:        1%{?dist}
 Summary:        Library for managing configuration files, written for wayfire
 
 License:        MIT
 URL:            https://github.com/WayfireWM/wf-config
-Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0:        %{url}/archive/refs/heads/master.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
