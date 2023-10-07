@@ -1,13 +1,17 @@
 %bcond_without test
 
+%global forgeurl https://github.com/WayfireWM/%{name}
+
 Name:           wf-config
 Version:        0.7.1
 Release:        %autorelease
 Summary:        Library for managing configuration files, written for wayfire
 
+%forgemeta
+
 License:        MIT
-URL:            https://github.com/WayfireWM/wf-config
-Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+URL:            %{forgeurl}
+Source0:        %{forgesource}
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
@@ -34,7 +38,7 @@ Development files for %{name}.
 
 
 %prep
-%autosetup -p1
+%forgeautosetup -p1
 
 
 %build
