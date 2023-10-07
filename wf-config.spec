@@ -3,7 +3,7 @@
 %global forgeurl https://github.com/WayfireWM/%{name}
 
 Name:           wf-config
-Version:        0.7.1
+Version:        0.8.0
 Release:        %autorelease
 Summary:        Library for managing configuration files, written for wayfire
 
